@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    Предмет - студент
+{% endblock title %}
+
+{% block content %}
+    {% for i in classes %}
+        <p>
+            {{ i.name }}:
+            {% for j in i.student_class.all %}
+                {{j.first_name}} {{ j.last_name }};
+            {% endfor %}
+        </p>
+    {% endfor %}
+{% endblock content %}
